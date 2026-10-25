@@ -1,0 +1,534 @@
+[
+  {
+    "package": "annotated-doc",
+    "version": "0.0.5",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/annotated-doc/0.0.5/"
+  },
+  {
+    "package": "annotated-types",
+    "version": "0.8.0",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/annotated-types/0.8.0/"
+  },
+  {
+    "package": "anyio",
+    "version": "4.15.1",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/anyio/4.15.1/"
+  },
+  {
+    "package": "bidict",
+    "version": "0.24.1",
+    "role": "benchmark",
+    "license_declaration": "MPL-2.0",
+    "upstream": "https://pypi.org/project/bidict/0.24.1/"
+  },
+  {
+    "package": "blinker",
+    "version": "1.9.0",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/blinker/1.9.0/"
+  },
+  {
+    "package": "brotli",
+    "version": "1.2.1",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/brotli/1.2.1/"
+  },
+  {
+    "package": "certifi",
+    "version": "2026.10.23",
+    "role": "development",
+    "license_declaration": "Mozilla Public License 2.0 (MPL 2.0)",
+    "upstream": "https://pypi.org/project/certifi/2026.10.23/"
+  },
+  {
+    "package": "charset-normalizer",
+    "version": "3.5.2",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/charset-normalizer/3.5.2/"
+  },
+  {
+    "package": "click",
+    "version": "8.5.0",
+    "role": "runtime",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/click/8.5.0/"
+  },
+  {
+    "package": "configargparse",
+    "version": "1.8.0",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/configargparse/1.8.0/"
+  },
+  {
+    "package": "contourpy",
+    "version": "1.3.3",
+    "role": "benchmark",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/contourpy/1.3.3/"
+  },
+  {
+    "package": "cycler",
+    "version": "0.12.1",
+    "role": "benchmark",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/cycler/0.12.1/"
+  },
+  {
+    "package": "fastapi",
+    "version": "0.162.0",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/fastapi/0.162.0/"
+  },
+  {
+    "package": "filelock",
+    "version": "4.2.4",
+    "role": "development",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/filelock/4.2.4/"
+  },
+  {
+    "package": "flask",
+    "version": "3.1.3",
+    "role": "benchmark",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/flask/3.1.3/"
+  },
+  {
+    "package": "flask-cors",
+    "version": "6.0.5",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/flask-cors/6.0.5/"
+  },
+  {
+    "package": "flask-login",
+    "version": "0.6.3",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/flask-login/0.6.3/"
+  },
+  {
+    "package": "flatbuffers",
+    "version": "25.12.19",
+    "role": "runtime",
+    "license_declaration": "Apache Software License",
+    "upstream": "https://pypi.org/project/flatbuffers/25.12.19/"
+  },
+  {
+    "package": "fonttools",
+    "version": "4.67.0",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/fonttools/4.67.0/"
+  },
+  {
+    "package": "fsspec",
+    "version": "2026.9.0",
+    "role": "development",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/fsspec/2026.9.0/"
+  },
+  {
+    "package": "gevent",
+    "version": "26.9.0",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/gevent/26.9.0/"
+  },
+  {
+    "package": "geventhttpclient",
+    "version": "2.6.1",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/geventhttpclient/2.6.1/"
+  },
+  {
+    "package": "greenlet",
+    "version": "3.5.6",
+    "role": "benchmark",
+    "license_declaration": "MIT AND PSF-2.0",
+    "upstream": "https://pypi.org/project/greenlet/3.5.6/"
+  },
+  {
+    "package": "h11",
+    "version": "0.16.0",
+    "role": "runtime",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/h11/0.16.0/"
+  },
+  {
+    "package": "httpcore",
+    "version": "1.0.9",
+    "role": "development",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/httpcore/1.0.9/"
+  },
+  {
+    "package": "httpx",
+    "version": "0.28.1",
+    "role": "development",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/httpx/0.28.1/"
+  },
+  {
+    "package": "idna",
+    "version": "3.20",
+    "role": "runtime",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/idna/3.20/"
+  },
+  {
+    "package": "iniconfig",
+    "version": "2.3.1",
+    "role": "development",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/iniconfig/2.3.1/"
+  },
+  {
+    "package": "itsdangerous",
+    "version": "2.2.0",
+    "role": "benchmark",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/itsdangerous/2.2.0/"
+  },
+  {
+    "package": "jinja2",
+    "version": "3.1.6",
+    "role": "development",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/jinja2/3.1.6/"
+  },
+  {
+    "package": "kiwisolver",
+    "version": "1.5.1",
+    "role": "benchmark",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/kiwisolver/1.5.1/"
+  },
+  {
+    "package": "locust",
+    "version": "2.47.0",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/locust/2.47.0/"
+  },
+  {
+    "package": "markupsafe",
+    "version": "3.0.4",
+    "role": "development",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/markupsafe/3.0.4/"
+  },
+  {
+    "package": "matplotlib",
+    "version": "3.10.7",
+    "role": "benchmark",
+    "license_declaration": "Python Software Foundation License",
+    "upstream": "https://pypi.org/project/matplotlib/3.10.7/"
+  },
+  {
+    "package": "ml-dtypes",
+    "version": "0.6.0",
+    "role": "development",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/ml-dtypes/0.6.0/"
+  },
+  {
+    "package": "mpmath",
+    "version": "1.3.0",
+    "role": "development",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/mpmath/1.3.0/"
+  },
+  {
+    "package": "msgpack",
+    "version": "1.2.3",
+    "role": "benchmark",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/msgpack/1.2.3/"
+  },
+  {
+    "package": "networkx",
+    "version": "3.6.1",
+    "role": "development",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/networkx/3.6.1/"
+  },
+  {
+    "package": "numpy",
+    "version": "2.4.6",
+    "role": "runtime",
+    "license_declaration": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "upstream": "https://pypi.org/project/numpy/2.4.6/"
+  },
+  {
+    "package": "onnx",
+    "version": "1.23.2",
+    "role": "development",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/onnx/1.23.2/"
+  },
+  {
+    "package": "onnx-ir",
+    "version": "1.1.0",
+    "role": "development",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/onnx-ir/1.1.0/"
+  },
+  {
+    "package": "onnxruntime",
+    "version": "1.31.0",
+    "role": "runtime",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/onnxruntime/1.31.0/"
+  },
+  {
+    "package": "onnxscript",
+    "version": "0.7.2",
+    "role": "development",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/onnxscript/0.7.2/"
+  },
+  {
+    "package": "opentelemetry-api",
+    "version": "1.45.1",
+    "role": "runtime",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/opentelemetry-api/1.45.1/"
+  },
+  {
+    "package": "packaging",
+    "version": "26.3",
+    "role": "runtime",
+    "license_declaration": "Apache-2.0 OR BSD-2-Clause",
+    "upstream": "https://pypi.org/project/packaging/26.3/"
+  },
+  {
+    "package": "pillow",
+    "version": "13.0.0",
+    "role": "runtime",
+    "license_declaration": "MIT-CMU",
+    "upstream": "https://pypi.org/project/pillow/13.0.0/"
+  },
+  {
+    "package": "pluggy",
+    "version": "1.7.0",
+    "role": "development",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/pluggy/1.7.0/"
+  },
+  {
+    "package": "prometheus-client",
+    "version": "0.26.0",
+    "role": "runtime",
+    "license_declaration": "Apache-2.0 AND BSD-2-Clause",
+    "upstream": "https://pypi.org/project/prometheus-client/0.26.0/"
+  },
+  {
+    "package": "protobuf",
+    "version": "7.36.2",
+    "role": "runtime",
+    "license_declaration": "3-Clause BSD License",
+    "upstream": "https://pypi.org/project/protobuf/7.36.2/"
+  },
+  {
+    "package": "psutil",
+    "version": "7.2.2",
+    "role": "benchmark",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/psutil/7.2.2/"
+  },
+  {
+    "package": "pydantic",
+    "version": "2.14.1",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/pydantic/2.14.1/"
+  },
+  {
+    "package": "pydantic-core",
+    "version": "2.50.1",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/pydantic-core/2.50.1/"
+  },
+  {
+    "package": "pygments",
+    "version": "2.21.0",
+    "role": "development",
+    "license_declaration": "BSD-2-Clause",
+    "upstream": "https://pypi.org/project/pygments/2.21.0/"
+  },
+  {
+    "package": "pyparsing",
+    "version": "3.3.3",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/pyparsing/3.3.3/"
+  },
+  {
+    "package": "pytest",
+    "version": "9.1.1",
+    "role": "development",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/pytest/9.1.1/"
+  },
+  {
+    "package": "python-dateutil",
+    "version": "3.0.0",
+    "role": "benchmark",
+    "license_declaration": "BSD License; Apache Software License",
+    "upstream": "https://pypi.org/project/python-dateutil/3.0.0/"
+  },
+  {
+    "package": "python-engineio",
+    "version": "4.14.0",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/python-engineio/4.14.0/"
+  },
+  {
+    "package": "python-socketio",
+    "version": "5.17.0",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/python-socketio/5.17.0/"
+  },
+  {
+    "package": "pyzmq",
+    "version": "27.2.0",
+    "role": "benchmark",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/pyzmq/27.2.0/"
+  },
+  {
+    "package": "requests",
+    "version": "2.34.2",
+    "role": "benchmark",
+    "license_declaration": "Apache Software License",
+    "upstream": "https://pypi.org/project/requests/2.34.2/"
+  },
+  {
+    "package": "setuptools",
+    "version": "84.2.1",
+    "role": "development",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/setuptools/84.2.1/"
+  },
+  {
+    "package": "simple-websocket",
+    "version": "1.1.0",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/simple-websocket/1.1.0/"
+  },
+  {
+    "package": "six",
+    "version": "1.17.0",
+    "role": "benchmark",
+    "license_declaration": "MIT License",
+    "upstream": "https://pypi.org/project/six/1.17.0/"
+  },
+  {
+    "package": "starlette",
+    "version": "1.10.0",
+    "role": "runtime",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/starlette/1.10.0/"
+  },
+  {
+    "package": "sympy",
+    "version": "1.14.0",
+    "role": "development",
+    "license_declaration": "BSD License",
+    "upstream": "https://pypi.org/project/sympy/1.14.0/"
+  },
+  {
+    "package": "torch",
+    "version": "2.14.1",
+    "role": "development",
+    "license_declaration": "Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT",
+    "upstream": "https://pypi.org/project/torch/2.14.1/"
+  },
+  {
+    "package": "torchvision",
+    "version": "0.29.1",
+    "role": "development",
+    "license_declaration": "BSD",
+    "upstream": "https://pypi.org/project/torchvision/0.29.1/"
+  },
+  {
+    "package": "typing-extensions",
+    "version": "4.16.0",
+    "role": "runtime",
+    "license_declaration": "PSF-2.0",
+    "upstream": "https://pypi.org/project/typing-extensions/4.16.0/"
+  },
+  {
+    "package": "typing-inspection",
+    "version": "0.4.4",
+    "role": "runtime",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/typing-inspection/0.4.4/"
+  },
+  {
+    "package": "tzdata",
+    "version": "2026.5",
+    "role": "benchmark",
+    "license_declaration": "Apache-2.0",
+    "upstream": "https://pypi.org/project/tzdata/2026.5/"
+  },
+  {
+    "package": "urllib3",
+    "version": "2.8.0",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/urllib3/2.8.0/"
+  },
+  {
+    "package": "uvicorn",
+    "version": "0.54.0",
+    "role": "runtime",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/uvicorn/0.54.0/"
+  },
+  {
+    "package": "werkzeug",
+    "version": "3.1.9",
+    "role": "benchmark",
+    "license_declaration": "BSD-3-Clause",
+    "upstream": "https://pypi.org/project/werkzeug/3.1.9/"
+  },
+  {
+    "package": "wsproto",
+    "version": "1.3.2",
+    "role": "benchmark",
+    "license_declaration": "MIT",
+    "upstream": "https://pypi.org/project/wsproto/1.3.2/"
+  },
+  {
+    "package": "zope-event",
+    "version": "6.2",
+    "role": "benchmark",
+    "license_declaration": "ZPL-2.1",
+    "upstream": "https://pypi.org/project/zope-event/6.2/"
+  },
+  {
+    "package": "zope-interface",
+    "version": "8.7",
+    "role": "benchmark",
+    "license_declaration": "ZPL-2.1",
+    "upstream": "https://pypi.org/project/zope-interface/8.7/"
+  }
+]

@@ -1,0 +1,15 @@
+# Serving contract
+
+One Uvicorn process owns one ONNX Runtime CPU session and one native inference executor. Preprocessing uses two threads. Prepared tensors enter a bounded FIFO after preprocessing completion, not HTTP arrival order. Each owns its future, enqueue timestamp, absolute deadline and cancellation token.
+
+`INFERENCEOPS_MODE` is `immediate` (default), `fixed`, or `dynamic`. Other settings: `BATCH_SIZE=8` (maximum eight), `QUEUE_DELAY_MS=10`, `QUEUE_CAPACITY=8`, `MAX_REQUESTS=8`, `PREPROCESSING_WORKERS=2`, `INTRA_OP_THREADS=2`, `INTER_OP_THREADS=1`, `REQUEST_TIMEOUT_MS=5000`, `SHUTDOWN_TIMEOUT_MS=5000`, `MAX_UPLOAD_BYTES=5242880`, `MAX_IMAGE_PIXELS=16000000`, `MAX_IMAGE_SIDE=8192`, and `MODEL_DIR=models/artifacts`. All names use the `INFERENCEOPS_` prefix. Compose explicitly uses a 500 ms request deadline; native defaults are 5000 ms.
+
+Immediate dispatches one eligible item whenever idle. Fixed dispatches up to B at startup-anchored periodic ticks and skips missed ticks. Dynamic dispatches on fullness or the oldest item's accumulation deadline; backlog accumulated while busy can dispatch immediately after native execution finishes. Neither accumulation timer bounds backlog behind busy execution.
+
+Admission happens before upload. Oversize declared or streamed bytes/dimensions return 413; invalid content type returns 415; malformed/animated images return 422. Images are PNG/JPEG converted to RGB, resized with PIL bilinear shorter-edge 256, center cropped 224×224, divided by 255, and ImageNet-normalized. EXIF orientation is not applied, matching the official PIL transform. Artifact/label SHA-256 validation and a real warmup precede readiness.
+
+Deadline starts at admission and covers upload, preprocessing, queue and native work. HTTP 503 indicates admission/queue rejection; 504 indicates expiry. Client-selected deadlines are not accepted. Cancelled/expired queue entries settle explicitly; after a handler timeout or cancellation, native work retains admission capacity until finished and late results are discarded. Independent socket-disconnect polling is not implemented; cancellation is driven by ASGI handler cancellation. A running native call cannot be forcibly interrupted.
+
+Shutdown closes readiness/admission, allows the configured processing drain interval, then fails queued futures and waits for active native work before closing executors. This is a bounded queue drain, not a guaranteed hard process-exit deadline. Uvicorn handles active upload handlers before application teardown.
+
+Prepared-queue wait is enqueue-to-dispatch; intentional accumulation is a measured subset while the worker is idle. Preprocessing/executor waits are separate. Native duration is for the whole executed batch. Server endpoint timing excludes serialization/network transfer; client timing is authoritative for end-to-end latency. Metrics expose HTTP status totals (including failures), admission, rejection stage, request latency, queue/accumulation wait, native inference, executed batch sizes and queue depth. Histogram dashboards are operational approximations, not the exact client percentiles in the report.

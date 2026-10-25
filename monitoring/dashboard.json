@@ -1,0 +1,224 @@
+{
+  "uid": "inferenceops",
+  "title": "InferenceOps",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Successful requests/s",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(inferenceops_http_requests_total{status=\"200\"}[30s]))",
+          "refId": "A",
+          "legendFormat": "Successful requests/s"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Server latency p50/p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(inferenceops_request_seconds_bucket[30s])) by (le))",
+          "refId": "A",
+          "legendFormat": "p95"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.50, sum(rate(inferenceops_request_seconds_bucket[30s])) by (le))",
+          "legendFormat": "p50"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Queue wait p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(inferenceops_queue_wait_seconds_bucket[30s])) by (le))",
+          "refId": "A",
+          "legendFormat": "Queue wait p95"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Native inference p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(inferenceops_inference_seconds_bucket[30s])) by (le))",
+          "refId": "A",
+          "legendFormat": "Native inference p95"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Mean executed batch size",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "rate(inferenceops_batch_size_sum[30s]) / rate(inferenceops_batch_size_count[30s])",
+          "refId": "A",
+          "legendFormat": "Mean executed batch size"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Queue depth",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "inferenceops_queue_depth",
+          "refId": "A",
+          "legendFormat": "Queue depth"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 8
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Errors and rejections/s",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "sum by (status) (rate(inferenceops_http_requests_total{status!=\"200\"}[30s])) or vector(0)",
+          "refId": "A",
+          "legendFormat": "Errors and rejections/s"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Intentional accumulation p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(inferenceops_accumulation_seconds_bucket[30s])) by (le))",
+          "refId": "A",
+          "legendFormat": "Intentional accumulation p95"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0
+        }
+      }
+    }
+  ]
+}

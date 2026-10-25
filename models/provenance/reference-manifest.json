@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "name": "resnet18",
+  "version": "resnet18-imagenet1k-v1-onnx-v1",
+  "weights": "torchvision.ResNet18_Weights.IMAGENET1K_V1",
+  "weights_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+  "weights_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "source": "https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet18.html",
+  "input": {
+    "name": "images",
+    "shape": [
+      "batch",
+      3,
+      224,
+      224
+    ],
+    "dtype": "float32",
+    "validated_batch_sizes": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "output": {
+    "name": "logits",
+    "shape": [
+      "batch",
+      1000
+    ]
+  },
+  "preprocessing": {
+    "color": "RGB",
+    "resize_shorter_edge": 256,
+    "interpolation": "PIL bilinear",
+    "center_crop": [
+      224,
+      224
+    ],
+    "scale": "uint8 / 255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "exif_orientation": "not applied; matches weights PIL transform"
+  },
+  "export": {
+    "opset": 18,
+    "dynamo": true,
+    "seed": 42,
+    "external_data": false
+  },
+  "versions": {
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "onnx": "1.23.2",
+    "onnxscript": "0.7.2",
+    "onnxruntime": "1.31.0",
+    "pillow": "13.0.0",
+    "numpy": "2.4.6"
+  },
+  "sha256": {
+    "resnet18.onnx": "bf64cca18e5757fbe5bb26b73b32876bf010775920122fce028be5a28feb289e",
+    "categories.json": "47c75d27d7a4c62415c9c1c4536ac98c68e1417b880987dbc5b166c3b7ebf1d9"
+  }
+}

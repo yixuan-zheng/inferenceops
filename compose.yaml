@@ -1,0 +1,44 @@
+name: inferenceops
+services:
+  api:
+    build: .
+    image: inferenceops:local
+    platform: linux/arm64
+    cpus: 2.0
+    mem_limit: 1g
+    environment:
+      INFERENCEOPS_MODE: ${INFERENCEOPS_MODE:-immediate}
+      INFERENCEOPS_BATCH_SIZE: ${INFERENCEOPS_BATCH_SIZE:-8}
+      INFERENCEOPS_QUEUE_DELAY_MS: ${INFERENCEOPS_QUEUE_DELAY_MS:-10}
+      INFERENCEOPS_REQUEST_TIMEOUT_MS: ${INFERENCEOPS_REQUEST_TIMEOUT_MS:-500}
+      INFERENCEOPS_MAX_REQUESTS: 8
+      INFERENCEOPS_QUEUE_CAPACITY: 8
+      INFERENCEOPS_INTRA_OP_THREADS: 2
+      INFERENCEOPS_INTER_OP_THREADS: 1
+      INFERENCEOPS_PREPROCESSING_WORKERS: 2
+    ports: ['127.0.0.1:18080:8000']
+    stop_grace_period: 15s
+    healthcheck:
+      test: ['CMD', 'python', '-c', "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+  prometheus:
+    image: prom/prometheus@sha256:fa3302279710be2f21a8301ec17a8b4f2301fd829bd113839b3b6b02b6f191a2
+    platform: linux/arm64
+    cpus: 0.5
+    mem_limit: 256m
+    volumes: ['./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro']
+    ports: ['127.0.0.1:19090:9090']
+  grafana:
+    image: grafana/grafana@sha256:dbbc38ea21103cefb50396340cd88afec779c7e070b0a7bf5a75b4ce46651d3f
+    platform: linux/arm64
+    cpus: 0.5
+    mem_limit: 256m
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: 'true'
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/dashboard.json:/var/lib/grafana/dashboards/inferenceops.json:ro
+    ports: ['127.0.0.1:13000:3000']

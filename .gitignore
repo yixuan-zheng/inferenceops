@@ -1,0 +1,24 @@
+# Local environments, generated models and private run artifacts
+.venv/
+.cache/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.egg-info/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.log
+*.har
+.DS_Store
+models/artifacts/
+results/generated/
+results/latest-*.xml
+playwright-report/
+test-results/
+results/published/*.png
+results/published/*.pdf

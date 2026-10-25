@@ -1,0 +1,11 @@
+{
+  "offered": 7685,
+  "sent": 7685,
+  "missed": 0,
+  "completed": 5834,
+  "rejected": 1851,
+  "timed_out": 0,
+  "other_errors": 0,
+  "prediction_mismatches": 0,
+  "duplicate_request_ids": 0
+}
