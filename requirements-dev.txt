@@ -19,5 +19,8 @@ pygments==2.21.0
 pytest==9.1.1
 setuptools==84.2.1
 sympy==1.14.0
-torch==2.14.1
-torchvision==0.29.1
+torch==2.14.1; sys_platform != "linux"
+torchvision==0.29.1; sys_platform != "linux"
+# Official, hash-pinned CPython 3.11 Linux ARM64 CPU wheels (no CUDA dependencies).
+torch @ https://download-r2.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl#sha256=36a03a3f87ec875ca39c8e29eccbaf0fc704605f78a3f7f179f157048c3c395e ; sys_platform == "linux"
+torchvision @ https://download-r2.pytorch.org/whl/cpu/torchvision-0.29.1%2Bcpu-cp311-cp311-manylinux_2_28_aarch64.whl#sha256=e100257aa2cd8840088d321c338f02657faf43d802d470dd8dcb7ff4003553d2 ; sys_platform == "linux"

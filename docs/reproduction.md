@@ -41,3 +41,5 @@ locust -f benchmarks/locustfile.py --host http://127.0.0.1:18080 \
 503s stay failures. Final JSON counters are recorded at shutdown because periodic CSV snapshots can lag. Do not compare policies using latency dominated by fast rejections, and do not run Locust/lifecycle probes concurrently with the controlled study.
 
 CPU-only hosted CI uses an ARM64 runner, a freshly exported model and the same test/build/smoke commands. CI verifies behavior; it does not rerun the performance study. Network access to upstream packages, model weights and container registries remains required.
+
+Linux development/export requirements use direct SHA-256-pinned official ARM64 CPU wheels for PyTorch and Torchvision, avoiding CUDA dependencies. CPython 3.11 and ARM64 are required for those wheel URLs. macOS uses the original validated native package versions.
